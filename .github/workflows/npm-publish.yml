@@ -16,7 +16,7 @@ name: npm-publish
 #       permissions:
 #         contents: read
 #         id-token: write
-#       uses: PerryLink/dsh-plugin-kit/.github/workflows/npm-publish.yml@main
+#       uses: PerryLink/dsh-toolkit/.github/workflows/npm-publish.yml@main
 #       with:
 #         package-dir: .
 

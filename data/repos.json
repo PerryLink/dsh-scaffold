@@ -4,7 +4,7 @@
   "repos": [
     {
       "name": "dsh-plugin-kit",
-      "github": "https://github.com/PerryLink/dsh-plugin-kit",
+      "github": "https://github.com/PerryLink/dsh-toolkit",
       "group": "基建",
       "role": "infra",
       "star": 1,

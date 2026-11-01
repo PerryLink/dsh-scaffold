@@ -1,26 +1,29 @@
-# @perrylink/dsh-plugin-kit
+# dsh-toolkit
+
+> **Renamed:** previously `@perrylink/dsh-plugin-kit`; now **`dsh-toolkit`**. Old repo stays as a pointer/backup. New home: https://github.com/PerryLink/dsh-toolkit
+
 
 Kit compartido **sin dependencias en tiempo de ejecución** para los repositorios de plugins DSH de PerryLink. La auditoría por proyecto detectó que más de 20 plugins reimplementan el mismo seam Provider y duplican las mismas formas de sanitización, precios y veredictos, así que este paquete lo extrae todo — el seam Provider enchufable, las puertas de aprobación fail-closed y de eventos de sesión adaptativos, los scripts de verificación mecánica y los módulos puros sanitize/pricing/judge — en un único paquete ESM + TypeScript.
 
-> **Nombre del paquete.** Este proyecto se publica en npm como **`@perrylink/dsh-plugin-kit`**. El nombre simple `dsh-plugin-kit` pertenece a otro proyecto no relacionado: instalarlo no instala este paquete.
+> **Nombre del paquete.** Este proyecto se publica en npm como **`dsh-toolkit`**. El nombre simple `dsh-toolkit` pertenece a otro proyecto no relacionado: instalarlo no instala este paquete.
 
-- **Canal de la tienda 1024**: primero `npm i -g dsh1024`, luego `dsh1024 plugin --profile web add @perrylink/dsh-plugin-kit` (cuenta para el ranking de instalaciones de [deepseek1024.com](https://deepseek1024.com)).
+- **Canal de la tienda 1024**: primero `npm i -g dsh1024`, luego `dsh1024 plugin --profile web add dsh-toolkit` (cuenta para el ranking de instalaciones de [deepseek1024.com](https://deepseek1024.com)).
 
-[![npm version](https://img.shields.io/npm/v/@perrylink/dsh-plugin-kit)](https://www.npmjs.com/package/@perrylink/dsh-plugin-kit)
+[![npm version](https://img.shields.io/npm/v/dsh-toolkit)](https://www.npmjs.com/package/dsh-toolkit)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![DSH plugin](https://img.shields.io/badge/dsh--plugin-✅-green)](https://github.com/topics/dsh-plugin)
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
 [![Node](https://img.shields.io/badge/node-%5E22.19%20%7C%7C%20%3E%3D24-brightgreen.svg)](#)
-[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/dsh-plugin-kit)
-[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-plugin-kit/ci.yml?branch=main&label=CI)](https://github.com/PerryLink/dsh-plugin-kit/actions)
-[![Version](https://img.shields.io/github/v/tag/PerryLink/dsh-plugin-kit?label=version)](https://github.com/PerryLink/dsh-plugin-kit/releases)
-[![npm downloads](https://img.shields.io/npm/dm/@perrylink/dsh-plugin-kit)](https://www.npmjs.com/package/@perrylink/dsh-plugin-kit)
-[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-plugin-kit?metric=downloads&lang=es)](https://dshfind.com/es/plugins/PerryLink/dsh-plugin-kit?ref=badge)
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/dsh-toolkit)
+[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-toolkit/ci.yml?branch=main&label=CI)](https://github.com/PerryLink/dsh-toolkit/actions)
+[![Version](https://img.shields.io/github/v/tag/PerryLink/dsh-toolkit?label=version)](https://github.com/PerryLink/dsh-toolkit/releases)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-toolkit)](https://www.npmjs.com/package/dsh-toolkit)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-toolkit?metric=downloads&lang=es)](https://dshfind.com/es/plugins/PerryLink/dsh-toolkit?ref=badge)
 
 [English](README.md) | [简体中文](README-zh.md) | **Español** | [Português](README-pt.md) | [हिन्दी](README-hi.md)
 
 ```sh
-dsh plugin --profile <name> add @perrylink/dsh-plugin-kit
+dsh plugin --profile <name> add dsh-toolkit
 ```
 
 
@@ -39,25 +42,25 @@ La instalación es `pnpm add` (ver Inicio rápido). El paquete también incluye 
 
 ```sh
 # canal npm (versiones publicadas)
-dsh plugin --profile web add @perrylink/dsh-plugin-kit
+dsh plugin --profile web add dsh-toolkit
 
 # canal git (último master)
-dsh plugin --profile web add github:PerryLink/dsh-plugin-kit
+dsh plugin --profile web add github:PerryLink/dsh-toolkit
 ```
 
 Para eliminar:
 
 ```sh
-pnpm remove @perrylink/dsh-plugin-kit
+pnpm remove dsh-toolkit
 ```
 
 Nada registra estado global: desinstalar es exactamente lo inverso de instalar.
 
-## What is dsh-plugin-kit?
+## What is dsh-toolkit?
 
 Kit compartido **sin dependencias en tiempo de ejecución** para los repositorios de plugins DSH de PerryLink. La auditoría por proyecto detectó que más de 20 plugins reimplementan el mismo seam Provider y duplican las mismas formas de sanitización, precios y veredictos, así que este paquete lo extrae todo — el seam Provider enchufable, las puertas de aprobación fail-closed y de eventos de sesión adaptativos, los scripts de verificación mecánica y los módulos puros sanitize/pricing/judge — en un único paquete ESM + TypeScript.
 
-![Diagrama de flujo de dsh-plugin-kit: llamada → plugin → resultado.](docs/assets/dsh-plugin-kit-flow.svg)
+![Diagrama de flujo de dsh-toolkit: llamada → plugin → resultado.](docs/assets/dsh-toolkit-flow.svg)
 
 *Resumen del flujo: llamada → plugin → resultado. Los ejemplos siguientes usan la superficie de comandos real.*
 
@@ -95,26 +98,26 @@ Kit compartido **sin dependencias en tiempo de ejecución** para los repositorio
 ## Inicio rápido
 
 ```sh
-dsh plugin --profile web add github:PerryLink/dsh-plugin-kit
+dsh plugin --profile web add github:PerryLink/dsh-toolkit
 ```
 
 Desde npm:
 
 ```sh
-pnpm add @perrylink/dsh-plugin-kit
+pnpm add dsh-toolkit
 ```
 
 Desde git (el script `prepare` construye `lib/` usando solo dependencias de
 producción):
 
 ```sh
-pnpm add github:PerryLink/dsh-plugin-kit
+pnpm add github:PerryLink/dsh-toolkit
 ```
 
 Reemplaza un registro escrito a mano en un paso:
 
 ```ts
-import { ProviderRegistry } from '@perrylink/dsh-plugin-kit/seam'
+import { ProviderRegistry } from 'dsh-toolkit/seam'
 
 const registry = new ProviderRegistry<Detector>({
   default: { name: 'regex', impl: new RegexDetector() },
@@ -132,7 +135,7 @@ Son los puntos de entrada reales; instala y llama a uno.
 **Comando**
 
 ~~~sh
-import { createStripper } from '@perrylink/dsh-plugin-kit/shared'
+import { createStripper } from 'dsh-toolkit/shared'
 createStripper().strip('call 13800138000 or email a@b.com')
 ~~~
 
@@ -158,7 +161,7 @@ const r = new ProviderRegistry(); r.register('openai', impl); r.register('openai
 Error: Provider "openai" is already registered
 ~~~
 
-*Observado en `plugins/dsh-plugin-kit/lib/seam/provider.js:55-58; plugins/dsh-plugin-kit/test/seam.test.ts:27-30; plugins/dsh-plugin-kit/README.md:164`*
+*Observado en `plugins/dsh-toolkit/lib/seam/provider.js:55-58; plugins/dsh-toolkit/test/seam.test.ts:27-30; plugins/dsh-toolkit/README.md:164`*
 
 #### Ejemplos breves
 
@@ -313,7 +316,7 @@ Este proyecto forma parte de la familia de plugins de DeepSeek Harness de [Perry
 | **[dsh-pleading-draft](https://github.com/PerryLink/dsh-pleading-draft)** |  |
 | **[dsh-plugin-doctor](https://github.com/PerryLink/dsh-plugin-doctor)** |  |
 | **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** |  |
-| **[dsh-plugin-kit](https://github.com/PerryLink/dsh-plugin-kit)** |  |
+| **[dsh-toolkit](https://github.com/PerryLink/dsh-toolkit)** |  |
 | **[dsh-plugin-upgrade](https://github.com/PerryLink/dsh-plugin-upgrade)** |  |
 | **[dsh-policy-brief-draft](https://github.com/PerryLink/dsh-policy-brief-draft)** |  |
 | **[dsh-power-loss-split](https://github.com/PerryLink/dsh-power-loss-split)** |  |

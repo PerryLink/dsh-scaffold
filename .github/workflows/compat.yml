@@ -39,7 +39,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/bare" && cd "$RUNNER_TEMP/bare"
           pnpm init >/dev/null
           pnpm add "$TARBALL" >/dev/null
-          node --input-type=module -e "import('@perrylink/dsh-plugin-kit').then(m=>{if(typeof m.makeEventGate!=='function'){console.error('unexpected library face');process.exit(1)}}).catch(e=>{console.error(e);process.exit(1)})"
+          node --input-type=module -e "import('dsh-toolkit').then(m=>{if(typeof m.makeEventGate!=='function'){console.error('unexpected library face');process.exit(1)}}).catch(e=>{console.error(e);process.exit(1)})"
   profile:
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -84,4 +84,4 @@ jobs:
         run: |
           set -euo pipefail
           export DSH_HOME="$RUNNER_TEMP/dsh-home"
-          dsh plugin --profile compat remove @perrylink/dsh-plugin-kit
+          dsh plugin --profile compat remove dsh-toolkit

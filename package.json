@@ -1,13 +1,13 @@
 {
-  "name": "@perrylink/dsh-plugin-kit",
-  "version": "0.1.22",
+  "name": "dsh-toolkit",
+  "version": "0.2.0",
   "description": "Shared zero-runtime-dependency toolkit for PerryLink DSH plugins: a pluggable Provider registry seam, fail-closed approval and adaptive session-event gates, mechanical verify scripts, shared sanitize/pricing/judge modules, and a new-plugin skeleton.",
   "author": "PerryLink",
   "license": "Apache-2.0",
-  "homepage": "https://www.npmjs.com/package/@perrylink/dsh-plugin-kit",
+  "homepage": "https://www.npmjs.com/package/dsh-toolkit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PerryLink/dsh-plugin-kit"
+    "url": "git+https://github.com/PerryLink/dsh-toolkit.git"
   },
   "type": "module",
   "main": "./lib/index.js",
@@ -49,7 +49,8 @@
     "SECURITY.md",
     "THIRD_PARTY_NOTICES.md",
     "LICENSE",
-    "STANDARDS.md"
+    "STANDARDS.md",
+    "MIGRATION.md"
   ],
   "dsh": {
     "bundle": {
@@ -140,5 +141,8 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/PerryLink"
+  },
+  "bugs": {
+    "url": "https://github.com/PerryLink/dsh-toolkit/issues"
   }
 }

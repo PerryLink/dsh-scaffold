@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0] - 2026-11-02
+
+### Changed
+
+- Rename the package from `@perrylink/dsh-plugin-kit` to `dsh-toolkit`.
+- New repository: https://github.com/PerryLink/dsh-toolkit; the old repository remains as a pointer.
+- Keep the old package as a deprecated backup.
+
+
 ## [0.1.22] - 2026-11-02
 
 ### Fixed
