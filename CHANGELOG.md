@@ -4,8 +4,8 @@
 
 ### Changed
 
-- Rename the package from `@perrylink/dsh-plugin-kit` to `dsh-toolkit`.
-- New repository: https://github.com/PerryLink/dsh-toolkit; the old repository remains as a pointer.
+- Rename the package from `@perrylink/dsh-plugin-kit` to `dsh-scaffold` (the intended `dsh-toolkit` was rejected by npm as too similar to `es-toolkit`).
+- New repository: https://github.com/PerryLink/dsh-scaffold; the old repository remains as a pointer.
 - Keep the old package as a deprecated backup.
 
 

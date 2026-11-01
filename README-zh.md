@@ -1,29 +1,29 @@
-# dsh-toolkit
+# dsh-scaffold
 
-> **Renamed:** previously `@perrylink/dsh-plugin-kit`; now **`dsh-toolkit`**. Old repo stays as a pointer/backup. New home: https://github.com/PerryLink/dsh-toolkit
+> **Renamed:** previously `@perrylink/dsh-plugin-kit`; now **`dsh-scaffold`**. Old repo stays as a pointer/backup. New home: https://github.com/PerryLink/dsh-scaffold
 
 
 面向 PerryLink DSH 插件仓库的共享**零运行时依赖**工具包。逐项审计发现 20+ 插件各自手写同样的 Provider seam、并重复相同的 sanitize/pricing/裁决形状，因此本包把 这一切——可插拔 Provider seam、fail-closed 审批门与自适应会话事件门、机械校验脚本、共享 的 sanitize/pricing/judge 纯函数模块——抽取进一个 ESM + TypeScript 包。
 
-> **包名说明。** 本项目的 npm 发布名是 **`dsh-toolkit`**。裸名 `dsh-toolkit` 属于另一个无关项目——装它不会装到本包。
+> **包名说明。** 本项目的 npm 发布名是 **`dsh-scaffold`**。裸名 `dsh-scaffold` 属于另一个无关项目——装它不会装到本包。
 
-- **1024 商店渠道**：先 `npm i -g dsh1024`，再 `dsh1024 plugin --profile web add dsh-toolkit`（计入 [deepseek1024.com](https://deepseek1024.com) 安装排行）。
+- **1024 商店渠道**：先 `npm i -g dsh1024`，再 `dsh1024 plugin --profile web add dsh-scaffold`（计入 [deepseek1024.com](https://deepseek1024.com) 安装排行）。
 
-[![npm version](https://img.shields.io/npm/v/dsh-toolkit)](https://www.npmjs.com/package/dsh-toolkit)
+[![npm version](https://img.shields.io/npm/v/dsh-scaffold)](https://www.npmjs.com/package/dsh-scaffold)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![DSH plugin](https://img.shields.io/badge/dsh--plugin-✅-green)](https://github.com/topics/dsh-plugin)
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-zh.svg)](https://dsh.market/)
 [![Node](https://img.shields.io/badge/node-%5E22.19%20%7C%7C%20%3E%3D24-brightgreen.svg)](#)
-[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/dsh-toolkit)
-[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-toolkit/ci.yml?branch=main&label=CI)](https://github.com/PerryLink/dsh-toolkit/actions)
-[![Version](https://img.shields.io/github/v/tag/PerryLink/dsh-toolkit?label=version)](https://github.com/PerryLink/dsh-toolkit/releases)
-[![npm downloads](https://img.shields.io/npm/dm/dsh-toolkit)](https://www.npmjs.com/package/dsh-toolkit)
-[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-toolkit?metric=downloads&lang=zh)](https://dshfind.com/zh/plugins/PerryLink/dsh-toolkit?ref=badge)
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/dsh-scaffold)
+[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-scaffold/ci.yml?branch=main&label=CI)](https://github.com/PerryLink/dsh-scaffold/actions)
+[![Version](https://img.shields.io/github/v/tag/PerryLink/dsh-scaffold?label=version)](https://github.com/PerryLink/dsh-scaffold/releases)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-scaffold)](https://www.npmjs.com/package/dsh-scaffold)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-scaffold?metric=downloads&lang=zh)](https://dshfind.com/zh/plugins/PerryLink/dsh-scaffold?ref=badge)
 
 [English](README.md) | **简体中文** | [Español](README-es.md) | [Português](README-pt.md) | [हिन्दी](README-hi.md)
 
 ```sh
-dsh plugin --profile <name> add dsh-toolkit
+dsh plugin --profile <name> add dsh-scaffold
 ```
 
 
@@ -32,11 +32,11 @@ dsh plugin --profile <name> add dsh-toolkit
 这一切——可插拔 Provider seam、fail-closed 审批门与自适应会话事件门、机械校验脚本、共享
 的 sanitize/pricing/judge 纯函数模块——抽取进一个 ESM + TypeScript 包。
 
-## What is dsh-toolkit?
+## What is dsh-scaffold?
 
 面向 PerryLink DSH 插件仓库的共享**零运行时依赖**工具包。逐项审计发现 20+ 插件各自手写同样的 Provider seam、并重复相同的 sanitize/pricing/裁决形状，因此本包把 这一切——可插拔 Provider seam、fail-closed 审批门与自适应会话事件门、机械校验脚本、共享 的 sanitize/pricing/judge 纯函数模块——抽取进一个 ESM + TypeScript 包。
 
-![dsh-toolkit 工作流图：调用 → 插件 → 结果。](docs/assets/dsh-toolkit-flow.svg)
+![dsh-scaffold 工作流图：调用 → 插件 → 结果。](docs/assets/dsh-scaffold-flow.svg)
 
 *工作流概览：调用 → 插件 → 结果。下面的示例使用实际命令面。*
 
@@ -66,25 +66,25 @@ dsh plugin --profile <name> add dsh-toolkit
 ## 快速开始
 
 ```sh
-dsh plugin --profile web add github:PerryLink/dsh-toolkit
+dsh plugin --profile web add github:PerryLink/dsh-scaffold
 ```
 
 npm 通道：
 
 ```sh
-pnpm add dsh-toolkit
+pnpm add dsh-scaffold
 ```
 
 git 通道（`prepare` 脚本只用生产依赖构建 `lib/`）：
 
 ```sh
-pnpm add github:PerryLink/dsh-toolkit
+pnpm add github:PerryLink/dsh-scaffold
 ```
 
 一步替换手写注册表：
 
 ```ts
-import { ProviderRegistry } from 'dsh-toolkit/seam'
+import { ProviderRegistry } from 'dsh-scaffold/seam'
 
 const registry = new ProviderRegistry<Detector>({
   default: { name: 'regex', impl: new RegexDetector() },
@@ -99,16 +99,16 @@ const active = registry.use('ner') ?? registry.use()
 
 ```sh
 # npm 渠道（正式发布版）
-dsh plugin --profile web add dsh-toolkit
+dsh plugin --profile web add dsh-scaffold
 
 # git 渠道（最新 master）
-dsh plugin --profile web add github:PerryLink/dsh-toolkit
+dsh plugin --profile web add github:PerryLink/dsh-scaffold
 ```
 
 移除：
 
 ```sh
-pnpm remove dsh-toolkit
+pnpm remove dsh-scaffold
 ```
 
 不注册任何全局状态：卸载就是安装的精确逆操作。
@@ -122,7 +122,7 @@ pnpm remove dsh-toolkit
 **命令**
 
 ~~~sh
-import { createStripper } from 'dsh-toolkit/shared'
+import { createStripper } from 'dsh-scaffold/shared'
 createStripper().strip('call 13800138000 or email a@b.com')
 ~~~
 
@@ -148,7 +148,7 @@ const r = new ProviderRegistry(); r.register('openai', impl); r.register('openai
 Error: Provider "openai" is already registered
 ~~~
 
-*来源 `plugins/dsh-toolkit/lib/seam/provider.js:55-58; plugins/dsh-toolkit/test/seam.test.ts:27-30; plugins/dsh-toolkit/README.md:164`*
+*来源 `plugins/dsh-scaffold/lib/seam/provider.js:55-58; plugins/dsh-scaffold/test/seam.test.ts:27-30; plugins/dsh-scaffold/README.md:164`*
 
 #### 简短示例
 
@@ -292,7 +292,7 @@ Apache-2.0——见 [LICENSE](LICENSE)。
 | **[dsh-pleading-draft](https://github.com/PerryLink/dsh-pleading-draft)** |  |
 | **[dsh-plugin-doctor](https://github.com/PerryLink/dsh-plugin-doctor)** |  |
 | **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** |  |
-| **[dsh-toolkit](https://github.com/PerryLink/dsh-toolkit)** |  |
+| **[dsh-scaffold](https://github.com/PerryLink/dsh-scaffold)** |  |
 | **[dsh-plugin-upgrade](https://github.com/PerryLink/dsh-plugin-upgrade)** |  |
 | **[dsh-policy-brief-draft](https://github.com/PerryLink/dsh-policy-brief-draft)** |  |
 | **[dsh-power-loss-split](https://github.com/PerryLink/dsh-power-loss-split)** |  |

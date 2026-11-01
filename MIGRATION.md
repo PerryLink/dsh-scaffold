@@ -1,9 +1,9 @@
-# Migration: dsh-toolkit
+# Migration: dsh-scaffold
 
 This project was previously published as `@perrylink/dsh-plugin-kit`.
 
-- New package: `dsh-toolkit`
-- New repository: https://github.com/PerryLink/dsh-toolkit
+- New package: `dsh-scaffold`
+- New repository: https://github.com/PerryLink/dsh-scaffold
 - Old repository: https://github.com/PerryLink/dsh-plugin-kit (kept as a pointer/backup)
 - Old npm package: deprecated, points here
 

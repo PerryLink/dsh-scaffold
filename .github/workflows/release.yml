@@ -65,7 +65,7 @@ jobs:
         id: published
         run: |
           VERSION="$(node -p "require('./package.json').version")"
-          if npm view "dsh-toolkit@${VERSION}" version >/dev/null 2>&1; then
+          if npm view "dsh-scaffold@${VERSION}" version >/dev/null 2>&1; then
             echo "already=true" >> "$GITHUB_OUTPUT"
             echo "already published: ${VERSION}; skipping the registry publish"
           else

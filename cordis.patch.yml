@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: Apache-2.0
-# dsh-toolkit bundle patch layer.
+# dsh-scaffold bundle patch layer.
 #
 # The kit is a library, not a plugin: it mounts no plugin row of its own, so
 # this layer is an intentionally empty array. It exists so the package can
 # flow through the harness bundle channel
-# (`dsh1024 plugin --profile web add dsh-toolkit`) and it is the
+# (`dsh1024 plugin --profile web add dsh-scaffold`) and it is the
 # canonical place where consuming plugins add their own `insert:` rows.
 #
 # Example for a consuming plugin (each key commented with its default):
