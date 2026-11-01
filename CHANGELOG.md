@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.22] - 2026-11-02
+
+### Fixed
+
+- Admit the published `0.2.2-alpha.2` tuple in the canonical peer range (`>=0.2.2-0 <0.3.0`); the `peer-range` gate now passes.
+
+
 ## [0.1.21] - 2026-11-02
 
 ### Changed

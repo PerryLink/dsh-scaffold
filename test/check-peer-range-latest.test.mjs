@@ -74,7 +74,7 @@ describe('satisfiesRange', () => {
 
   it('does NOT admit a future prerelease tuple (the reason the tripwire exists)', () => {
     expect(satisfiesRange('0.1.8-rc.1', CANONICAL)).toBe(false)
-    expect(satisfiesRange('0.2.2-rc.1', CANONICAL)).toBe(false)
+    expect(satisfiesRange('0.2.3-rc.1', CANONICAL)).toBe(false)
   })
 
   it('admits the 0.2 corridor through its own -0 clauses (the current host line)', () => {
@@ -104,8 +104,8 @@ describe('suggestedClause', () => {
   it('widens past the 0.2 boundary once the canonical range carries a 0.2 clause', () => {
     // The 0.1.x clauses all cap at <0.2.0, so a 0.2 tuple is only admitted by a
     // clause whose own upper bound sits above it - `<0.3.0`, not `<0.2.0`.
-    expect(suggestedClause('0.2.2-rc.1', CANONICAL)).toBe('>=0.2.2-0 <0.3.0')
-    const fixed = `${CANONICAL} || ${suggestedClause('0.2.2-rc.1', CANONICAL)}`
+    expect(suggestedClause('0.2.3-rc.1', CANONICAL)).toBe('>=0.2.3-0 <0.3.0')
+    const fixed = `${CANONICAL} || ${suggestedClause('0.2.3-rc.1', CANONICAL)}`
     expect(satisfiesRange('0.2.2-rc.1', fixed)).toBe(true)
     expect(satisfiesRange('0.2.2', fixed)).toBe(true)
     expect(satisfiesRange('0.3.0-rc.1', fixed)).toBe(false)
