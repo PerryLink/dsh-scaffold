@@ -1,6 +1,6 @@
 {
   "name": "@perrylink/dsh-plugin-kit",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "Shared zero-runtime-dependency toolkit for PerryLink DSH plugins: a pluggable Provider registry seam, fail-closed approval and adaptive session-event gates, mechanical verify scripts, shared sanitize/pricing/judge modules, and a new-plugin skeleton.",
   "author": "PerryLink",
   "license": "Apache-2.0",
@@ -48,11 +48,27 @@
     "CHANGELOG.md",
     "SECURITY.md",
     "THIRD_PARTY_NOTICES.md",
-    "LICENSE"
+    "LICENSE",
+    "STANDARDS.md"
   ],
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "standards": {
+      "schema": "dsh-levels/1",
+      "entry": {
+        "status": "not-run",
+        "evidence": null
+      },
+      "flow": {
+        "status": "not-run",
+        "evidence": null
+      },
+      "boost": {
+        "status": "not-measured",
+        "evidence": null
+      }
     }
   },
   "scripts": {
