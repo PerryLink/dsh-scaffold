@@ -30,8 +30,8 @@ if (typeof index.makeEventGate !== 'function' || typeof index.applyFailClosed !=
 
 // 3. The bundle patch must reference the package by its own name.
 const patch = readFileSync(path.join(root, 'cordis.patch.yml'), 'utf8')
-if (!patch.includes('dsh-toolkit')) {
-  throw new Error('cordis.patch.yml does not reference dsh-toolkit')
+if (!patch.includes('dsh-scaffold')) {
+  throw new Error('cordis.patch.yml does not reference dsh-scaffold')
 }
 
 console.log('artifacts OK: syntax + ESM import + bundle patch present')
