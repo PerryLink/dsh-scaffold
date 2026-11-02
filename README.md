@@ -1,3 +1,5 @@
+> **Merged:** this alias is now part of **[dsh-scaffold](https://github.com/PerryLink/dsh-scaffold)**. Install `dsh-scaffold`; this repository is a pointer/backup.
+
 # dsh-scaffold
 
 > **Renamed:** previously `@perrylink/dsh-plugin-kit`; now **`dsh-scaffold`**. Old repo stays as a pointer/backup. New home: https://github.com/PerryLink/dsh-scaffold
