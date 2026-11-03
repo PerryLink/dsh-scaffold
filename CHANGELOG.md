@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1] - 2026-11-03
+
+### Changed
+
+- Align dev/peer types with DeepSeek Harness `0.2.2-alpha.3`: `@deepseek-ai/cordis` `^4.0.6-alpha.2`, `@deepseek-ai/schemastery` `^3.18.6-alpha.2`.
+- Verified: `pnpm test` 74/74.
+
 ## [0.2.0] - 2026-11-02
 
 ### Changed
