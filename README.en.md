@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-dark.svg">
-  <img src="docs/assets/dsh-scaffold-flow-light.svg" width="100%" alt="dsh-scaffold surface: a consuming plugin imports the four subpaths seam / gates / shared / verify, plus the template/ skeleton and the cordis.patch.yml patch layer">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-hero-en-dark.webp">
+  <img src="docs/assets/dsh-scaffold-hero-en-light.webp" width="100%" alt="dsh-scaffold package anatomy: the four subpaths seam / gates / shared / verify, the intentionally empty cordis.patch.yml (0 plugin rows), and the template/ three-role skeleton">
 </picture>
 
 # dsh-scaffold
@@ -46,6 +46,11 @@ consuming plugin ──import──▶ seam · gates · shared · verify
                                    │
                                    └── template/ skeleton + cordis.patch.yml (intentionally empty: no rows)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="Structure figure: three swimlanes (consumer plugin / dsh-scaffold / host · CI) across four phases (setup / call / dispose / CI gate); the host setup cell holds 0 plugin rows and the CI lane ends in an exit code">
+</picture>
 
 ## Three-step setup
 

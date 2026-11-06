@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-dark.svg">
-  <img src="docs/assets/dsh-scaffold-flow-light.svg" width="100%" alt="Superficie de dsh-scaffold: un plugin consumidor importa los cuatro subpaths seam / gates / shared / verify, más el esqueleto template/ y la capa de patch cordis.patch.yml">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-hero-en-dark.webp">
+  <img src="docs/assets/dsh-scaffold-hero-en-light.webp" width="100%" alt="anatomía del paquete dsh-scaffold: las cuatro subrutas seam / gates / shared / verify, el cordis.patch.yml vacío a propósito (0 filas de plugin) y el esqueleto template/ de tres roles">
 </picture>
 
 # dsh-scaffold
@@ -46,6 +46,11 @@ plugin consumidor ──import──▶ seam · gates · shared · verify
                                      │
                                      └── esqueleto template/ + cordis.patch.yml (vacío a propósito: sin filas)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="Figura de estructura: tres carriles (plugin consumidor / dsh-scaffold / host · CI) en cuatro fases (instalación / llamada / retirada / puerta CI); la celda del host en la instalación tiene 0 filas de plugin y el carril CI termina en un código de salida">
+</picture>
 
 ## Instalación en tres pasos
 

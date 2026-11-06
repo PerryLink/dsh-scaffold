@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-dark.svg">
-  <img src="docs/assets/dsh-scaffold-flow-light.svg" width="100%" alt="dsh-scaffold 表面：消费插件 import 四个子路径 seam / gates / shared / verify，外加 template/ 骨架与 cordis.patch.yml patch 层">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-scaffold-hero-zh-light.webp" width="100%" alt="dsh-scaffold 包解剖图：四个子路径 seam / gates / shared / verify 各带一句职责，底部是留空的 cordis.patch.yml（0 个插件行）与 template/ 三角色骨架">
 </picture>
 
 # dsh-scaffold
@@ -46,6 +46,11 @@ dsh plugin --profile <name> add dsh-scaffold
                           │
                           └── template/ 骨架 + cordis.patch.yml（有意留空：不挂行）
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="结构图：三条泳道（消费插件 / dsh-scaffold / 宿主与 CI）× 四个阶段（装配 / 调用 / 停止与卸载 / CI 门）；装配列的宿主格是 0 个插件行，CI 列以退出码收尾">
+</picture>
 
 ## 三步上手
 

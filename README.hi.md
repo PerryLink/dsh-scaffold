@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-dark.svg">
-  <img src="docs/assets/dsh-scaffold-flow-light.svg" width="100%" alt="dsh-scaffold की सतह: उपभोक्ता प्लगइन चार subpath seam / gates / shared / verify आयात करता है, साथ में template/ ढाँचा और cordis.patch.yml पैच परत">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-hero-en-dark.webp">
+  <img src="docs/assets/dsh-scaffold-hero-en-light.webp" width="100%" alt="dsh-scaffold पैकेज का विच्छेदन: चार subpath seam / gates / shared / verify, जानबूझकर खाली cordis.patch.yml (0 plugin rows) और template/ तीन-भूमिका ढाँचा">
 </picture>
 
 # dsh-scaffold
@@ -46,6 +46,11 @@ dsh plugin --profile <name> add dsh-scaffold
                                      │
                                      └── template/ ढाँचा + cordis.patch.yml (जान-बूझकर खाली: कोई पंक्ति नहीं)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-scaffold-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="संरचना चित्र: तीन लेन (उपभोक्ता प्लगइन / dsh-scaffold / host · CI) चार चरणों में (सेटअप / कॉल / डिस्पोज़ / CI गेट); सेटअप में host सेल में 0 plugin rows हैं और CI लेन एक exit code पर समाप्त होती है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
