@@ -33,9 +33,43 @@ pnpm test
 ```
 
 Replace every `<PLACEHOLDER>` token before publishing: `<PLUGIN_NAME>` in
-`package.json`, `src/index.ts`, this README and `cordis.patch.yml`;
-`<plugin-id>` in `cordis.patch.yml`; `<One-line purpose.>` in `package.json`
-and this README.
+`package.json`, `src/index.ts`, this README, `cordis.patch.yml` and
+`SECURITY.md`; `<OWNER>` in `SECURITY.md`; `<plugin-id>` in
+`cordis.patch.yml`; `<One-line purpose.>` in `package.json` and this README.
+
+## Security
+
+A DSH plugin runs in the host's process, as your user, with your permissions:
+there is no runtime sandbox around loaded plugin code, and `dsh.capabilities` is
+a declaration the host does not enforce. Treat the manifest as disclosure, not
+as a boundary.
+
+- **Least privilege.** `dsh.capabilities` ships as `[]` and
+  `security.permissions` declares no files, network, credentials, shell, or
+  subprocess use — both are true only while the skeleton stays this small. Add
+  the capability ID and the permission entry as soon as you touch a surface;
+  deleting a declaration does not remove the ability.
+- **Credentials.** Resolve per operation with
+  `ctx.credentials.resolve(credentialRef('NAME'))`; use `describe()` for a UI.
+  Never log, persist, put in `argv`, or forward a value. Never read
+  `~/.ssh`, `~/.aws`, `~/.netrc`, `.npmrc`, or the credential backing file.
+- **Egress.** Keep a constant `https` allowlist, fetch no URL supplied by a
+  model or a tool result, check redirects hop by hop, and disclose third-party
+  endpoints. The host has no egress policy; this is the plugin's own discipline.
+- **Output is untrusted.** Tool results, web pages, files, and session text are
+  data, not instructions. Validate against `output.schema` and wrap external
+  text before it reaches a prompt; escape it before it reaches HTML or a shell.
+- **Lifecycle scripts.** The template has no `preinstall`/`install`/
+  `postinstall`/`prepare`. Keep it that way; `--ignore-scripts` stops install
+  scripts only, not the code the host loads.
+- **Disclosure.** `security.permissions` is a draft, non-host field: it is not
+  read or enforced. `dsh.commitments` and `dsh.disclosure` are optional — leave
+  them out rather than filling in claims you cannot support.
+- **Reporting.** `SECURITY.md` names the private advisory channel and the
+  supported versions. Report privately; do not open a public issue.
+
+The full boundary and the proposed `DSC-15`–`DSC-22` checks are in
+[dsh-plugin-guide/docs/security.md](https://github.com/PerryLink/dsh-plugin-guide/blob/main/docs/security.md).
 
 ## Standards (fill before publishing)
 

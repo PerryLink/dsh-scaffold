@@ -34,7 +34,13 @@ describe('template placeholders', () => {
     expect(pkg.engines?.dsh).toBe('>=0.2.2-0 <0.3.0')
     expect(pkg.files).toContain('LICENSE')
     expect(pkg.files).toContain('cordis.patch.yml')
+    expect(pkg.files).toContain('SECURITY.md')
     expect(existsSync(templateUrl('LICENSE'))).toBe(true)
+    expect(existsSync(templateUrl('SECURITY.md'))).toBe(true)
+    // The policy must name a private channel and the supported versions.
+    const policy = readText('SECURITY.md')
+    expect(policy).toMatch(/security\/advisories\/new/)
+    expect(policy).toMatch(/Supported versions/i)
   })
 
   it('ships the full Apache-2.0 text as template/LICENSE', () => {
@@ -57,6 +63,23 @@ describe('template placeholders', () => {
     // The skeleton uses no Harness host surface, so the empty array is real
     // (not an omission); the README must say how to fill it.
     expect(readText('README.md')).toMatch(/dsh\.capabilities/)
+
+    // No install-time lifecycle scripts: the template must not opt into
+    // running code on the user's machine at install time.
+    for (const name of ['preinstall', 'install', 'postinstall', 'prepare']) {
+      expect(pkg.scripts?.[name]).toBeUndefined()
+    }
+
+    // Permissions are disclosure only, in a draft shape the host does not read.
+    expect(pkg.security.status).toBe('draft')
+    expect(pkg.security.note).toMatch(/not enforced/i)
+    expect(pkg.security.permissions).toEqual({
+      files: [],
+      network: [],
+      credentials: [],
+      shell: false,
+      subprocess: false,
+    })
   })
 
   it('depends on the published dsh-scaffold package instead of the 404 dsh-toolkit', () => {
