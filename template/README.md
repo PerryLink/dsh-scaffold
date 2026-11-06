@@ -68,14 +68,19 @@ as a boundary.
 - **Reporting.** `SECURITY.md` names the private advisory channel and the
   supported versions. Report privately; do not open a public issue.
 
-The full boundary and the proposed `DSC-15`–`DSC-22` checks are in
+The full boundary and the released `DSC-15`–`DSC-22` checks (`dsh-standards`
+1.6.0+) are in
 [dsh-plugin-guide/docs/security.md](https://github.com/PerryLink/dsh-plugin-guide/blob/main/docs/security.md).
+Run them with `--scope security`: `DSC-15`/`DSC-16`/`DSC-17` can block,
+`DSC-21` is WARN-only, and `DSC-18`/`DSC-19`/`DSC-20`/`DSC-22` are advisory.
 
 ## Standards (fill before publishing)
 
 The optional `dsh.standards` block in `package.json` starts as a placeholder, not a claim.
-Run `npx dsh-standards@1.2.2 . --scope entry --entry-claim static --format json --out entry.json`
-and replace it with the recorded output.
+Run `npx dsh-standards@1.6.3 . --scope entry --entry-claim static --format json --out entry.json`
+and replace it with the recorded output. The eight security checks also run
+under their own scope:
+`npx dsh-standards@1.6.3 check . --scope security --json`.
 With no evidence, keep `not-run` / `not-measured`; never write `PASS` without a recorded gate, journey or benchmark.
 
 The same statuses live in `standards.json`. The three levels are adoption
