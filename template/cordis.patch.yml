@@ -1,8 +1,8 @@
 # <PLUGIN_NAME> bundle patch: mount the <PLUGIN_NAME> plugin.
 #
 # Every key under `config` is a Config field (see src/index.ts); invalid values
-# fail the profile load loudly. Ship this file as `cordis.patch.yml` in the
-# package root and reference it from package.json `dsh.bundle.patch`.
+# fail the profile load loudly. Keep this exact filename: it is listed in
+# package.json `files` and referenced from `dsh.bundle.patch`.
 - insert:
     - id: <plugin-id>
       name: <PLUGIN_NAME>

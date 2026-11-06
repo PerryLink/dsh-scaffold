@@ -1,0 +1,47 @@
+# dsh-standards ENTRY check — ADVISORY.
+#
+# This workflow reports the DSH-ENTRY (static claim) result for the package.
+# It is deliberately advisory: the `continue-on-error` lines keep a failing
+# check from blocking merges while the standard is being adopted. Delete both
+# of them (job level and step level) to make the gate blocking.
+#
+# The checker is pinned to 1.2.2 on purpose: `--entry-claim static` and the
+# JSON report schema are version-specific, so @latest would silently change
+# the verdict.
+name: entry-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  entry:
+    name: dsh-standards entry (advisory)
+    runs-on: ubuntu-latest
+    # Advisory: a failed check never fails the workflow run itself.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          # dsh-standards@1.2.2 requires Node >=24.9.0.
+          node-version: 24.9
+      - name: Install the pinned checker
+        run: npm i -D dsh-standards@1.2.2
+      - name: Run the ENTRY check (static claim)
+        # Advisory at step level too, so the report below is still uploaded
+        # when the check exits 1 (FAIL) or 2 (incomplete).
+        continue-on-error: true
+        run: npx dsh-standards . --scope entry --entry-claim static --format json --out entry.json
+      - name: Upload the ENTRY report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: entry-report
+          path: entry.json
+          if-no-files-found: warn

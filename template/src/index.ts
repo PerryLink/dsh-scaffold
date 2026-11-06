@@ -14,13 +14,13 @@
  * Copy this directory and replace every <PLACEHOLDER> token.
  */
 
-import { ProviderRegistry } from '@perrylink/dsh-plugin-kit/seam'
+import { ProviderRegistry } from 'dsh-scaffold/seam'
 
 /** Minimal structural Cordis context surface (substitute the real `Context`). */
 interface Ctx {
   /** Register a side effect that returns its disposer. */
   effect(cb: () => () => void): void
-  /** The plugin config as loaded from cordis.yml. */
+  /** The plugin config as loaded from cordis.patch.yml. */
   config: Config
 }
 

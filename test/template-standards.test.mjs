@@ -1,8 +1,9 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-const readJson = (name) =>
-  JSON.parse(readFileSync(new URL(`../template/${name}`, import.meta.url), 'utf8'))
+const templateUrl = (name) => new URL(`../template/${name}`, import.meta.url)
+const readJson = (name) => JSON.parse(readFileSync(templateUrl(name), 'utf8'))
+const readText = (name) => readFileSync(templateUrl(name), 'utf8')
 
 const PLACEHOLDER_STATUSES = {
   entry: 'not-run',
@@ -28,8 +29,53 @@ describe('template placeholders', () => {
     expect(JSON.stringify(pkg.dsh.standards)).not.toMatch(/PASS|certified|official|recommended|secure/iu)
   })
 
-  it('points dsh.bundle.patch at the bundle patch source', () => {
+  it('declares license, engines.dsh and the files the entry standard requires', () => {
+    expect(pkg.license).toBe('Apache-2.0')
+    expect(pkg.engines?.dsh).toBe('>=0.2.2-0 <0.3.0')
+    expect(pkg.files).toContain('LICENSE')
+    expect(pkg.files).toContain('cordis.patch.yml')
+    expect(existsSync(templateUrl('LICENSE'))).toBe(true)
+  })
+
+  it('ships the full Apache-2.0 text as template/LICENSE', () => {
+    const license = readText('LICENSE')
+    expect(license).toContain('Apache License')
+    expect(license).toContain('Version 2.0, January 2004')
+    expect(license).toContain('limitations under the License')
+  })
+
+  it('points dsh.bundle.patch at a patch file that exists', () => {
     expect(pkg.dsh.bundle.patch).toBe('./cordis.patch.yml')
-    expect(existsSync(new URL('../template/cordis.yml', import.meta.url))).toBe(true)
+    expect(existsSync(templateUrl('cordis.patch.yml'))).toBe(true)
+    expect(existsSync(templateUrl('cordis.yml'))).toBe(false)
+  })
+
+  it('declares empty capabilities/labels and explains the empty capabilities list', () => {
+    expect(Array.isArray(pkg.dsh.capabilities)).toBe(true)
+    expect(pkg.dsh.capabilities).toEqual([])
+    expect(pkg.dsh.labels).toEqual([])
+    // The skeleton uses no Harness host surface, so the empty array is real
+    // (not an omission); the README must say how to fill it.
+    expect(readText('README.md')).toMatch(/dsh\.capabilities/)
+  })
+
+  it('depends on the published dsh-scaffold package instead of the 404 dsh-toolkit', () => {
+    expect(pkg.dependencies['dsh-scaffold']).toMatch(/^\^0\.2\./)
+    expect(pkg.dependencies['dsh-toolkit']).toBeUndefined()
+    const source = readText('src/index.ts')
+    expect(source).toContain("from 'dsh-scaffold/seam'")
+    expect(source).not.toContain('dsh-plugin-kit')
+  })
+
+  it('ships an advisory entry-check workflow pinned to Node 24.9 and dsh-standards 1.2.2', () => {
+    const workflowFile = '.github/workflows/entry-check.yml'
+    expect(existsSync(templateUrl(workflowFile))).toBe(true)
+    const workflow = readText(workflowFile)
+    expect(workflow).toMatch(/continue-on-error:\s*true/)
+    expect(workflow).toMatch(/node-version:\s*['"]?24\.9/)
+    expect(workflow).toContain('npm i -D dsh-standards@1.2.2')
+    expect(workflow).toContain('npx dsh-standards . --scope entry --entry-claim static --format json --out entry.json')
+    expect(workflow).toContain('actions/upload-artifact')
+    expect(workflow).toMatch(/if:\s*always\(\)/)
   })
 })
