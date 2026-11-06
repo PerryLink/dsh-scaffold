@@ -1,6 +1,6 @@
 {
   "name": "dsh-scaffold",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Shared zero-runtime-dependency toolkit for PerryLink DSH plugins: a pluggable Provider registry seam, fail-closed approval and adaptive session-event gates, mechanical verify scripts, shared sanitize/pricing/judge modules, and a new-plugin skeleton.",
   "author": "PerryLink",
   "license": "Apache-2.0",
