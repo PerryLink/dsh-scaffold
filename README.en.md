@@ -252,7 +252,7 @@ This package is a library rather than a plugin, so its footprint on other plugin
 
 | Surface | Status |
 |---|---|
-| Harness | Zero `@deepseek-ai/*` imports at runtime; `@deepseek-ai/cordis` (`^4.0.6-alpha.2`), `@deepseek-ai/schemastery` (`^3.18.6-alpha.2`) and the `@deepseek-ai/dsh-*` packages are **optional** peers in the `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` band, for type interop only. Verified 2026-09-11 against the `dsh-v0.1.7-alpha.1` master checkout (full gate chain + profile install smoke) and re-verified 2026-10-05 against the `dsh-v0.2.1-alpha.1` checkout (same checks). |
+| Harness | Zero `@deepseek-ai/*` imports at runtime; `@deepseek-ai/cordis` (`^4.0.6-alpha.2`), `@deepseek-ai/schemastery` (`^3.18.6-alpha.2`) and the `@deepseek-ai/dsh-*` packages are **optional** peers in the `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` band, for type interop only. Verified 2026-11-18 against the `dsh-v0.1.7-alpha.1` master checkout (full gate chain + profile install smoke) and re-verified 2026-11-18 against the `dsh-v0.2.2-rc.4` checkout (same checks). |
 | Node | `^22.19.0 \|\| >=24.0.0`, ESM only |
 | Platforms | Anywhere DSH runs (pure library, no browser half) |
 | Model | Irrelevant: the kit calls no model |

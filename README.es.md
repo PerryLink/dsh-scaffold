@@ -252,7 +252,7 @@ Este paquete es una biblioteca, no un plugin, así que su huella sobre otros plu
 
 | Superficie | Estado |
 |---|---|
-| Harness | Cero imports de `@deepseek-ai/*` en tiempo de ejecución; `@deepseek-ai/cordis` (`^4.0.6-alpha.2`), `@deepseek-ai/schemastery` (`^3.18.6-alpha.2`) y los paquetes `@deepseek-ai/dsh-*` son peers **opcionales** en la banda `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`, solo para interoperar tipos. Verificado el 2026-09-11 contra el checkout master `dsh-v0.1.7-alpha.1` (cadena completa de puertas + smoke de instalación de perfil) y re-verificado el 2026-10-05 contra el checkout `dsh-v0.2.1-alpha.1` (mismas comprobaciones). |
+| Harness | Cero imports de `@deepseek-ai/*` en tiempo de ejecución; `@deepseek-ai/cordis` (`^4.0.6-alpha.2`), `@deepseek-ai/schemastery` (`^3.18.6-alpha.2`) y los paquetes `@deepseek-ai/dsh-*` son peers **opcionales** en la banda `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`, solo para interoperar tipos. Verificado el 2026-11-18 contra el checkout master `dsh-v0.1.7-alpha.1` (cadena completa de puertas + smoke de instalación de perfil) y re-verificado el 2026-11-18 contra el checkout `dsh-v0.2.2-rc.4` (mismas comprobaciones). |
 | Node | `^22.19.0 \|\| >=24.0.0`, solo ESM |
 | Plataformas | Donde sea que corra DSH (biblioteca pura, sin mitad de navegador) |
 | Modelo | Irrelevante: el kit no llama a ningún modelo |

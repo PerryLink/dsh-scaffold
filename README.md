@@ -252,7 +252,7 @@ insert:
 
 | 维度 | 状态 |
 |---|---|
-| Harness | 运行时零 `@deepseek-ai/*` import；`@deepseek-ai/cordis`（`^4.0.6-alpha.2`）、`@deepseek-ai/schemastery`（`^3.18.6-alpha.2`）与各 `@deepseek-ai/dsh-*` 是**可选** peer，区间 `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`，仅用于类型互通。2026-09-11 对 `dsh-v0.1.7-alpha.1` master checkout 核验（全量门禁链 + profile 安装冒烟），2026-10-05 对 `dsh-v0.2.1-alpha.1` checkout 复核（同套核验）。 |
+| Harness | 运行时零 `@deepseek-ai/*` import；`@deepseek-ai/cordis`（`^4.0.6-alpha.2`）、`@deepseek-ai/schemastery`（`^3.18.6-alpha.2`）与各 `@deepseek-ai/dsh-*` 是**可选** peer，区间 `>=0.1.2-rc.1 <0.2.0 \|\| >=0.1.5-alpha.1 <0.2.0 \|\| >=0.1.6-0 <0.2.0 \|\| >=0.1.7-0 <0.2.0 \|\| >=0.2.0-0 <0.3.0 \|\| >=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`，仅用于类型互通。2026-11-18 对 `dsh-v0.1.7-alpha.1` master checkout 核验（全量门禁链 + profile 安装冒烟），2026-11-18 对 `dsh-v0.2.2-rc.4` checkout 复核（同套核验）。 |
 | Node | `^22.19.0 \|\| >=24.0.0`，仅 ESM |
 | 平台 | 任何 DSH 可运行处（纯库，无浏览器半） |
 | 模型 | 无关：本包不调用模型 |
