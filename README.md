@@ -35,7 +35,7 @@ dsh plugin --profile <name> add dsh-scaffold
 
 ## 它是什么
 
-![dsh-scaffold 真实终端运行](docs/assets/dsh-plugin-kit-demo.gif)
+![dsh-scaffold 真实终端运行](docs/assets/dsh-scaffold-demo.gif)
 
 *本仓库一次真实运行的动图回放。*
 

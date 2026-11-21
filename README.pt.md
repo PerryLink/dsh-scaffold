@@ -52,7 +52,7 @@ plugin consumidor ──import──▶ seam · gates · shared · verify
   <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="Figura de estrutura: três raias (plugin consumidor / dsh-scaffold / host · CI) em quatro fases (instalação / chamada / remoção / portão CI); a célula do host na instalação tem 0 linhas de plugin e a raia CI termina em um código de saída">
 </picture>
 
-![dsh-scaffold: execução real de terminal](docs/assets/dsh-plugin-kit-demo.gif)
+![dsh-scaffold: execução real de terminal](docs/assets/dsh-scaffold-demo.gif)
 
 *Repetição animada de uma execução real registrada neste repositório.*
 

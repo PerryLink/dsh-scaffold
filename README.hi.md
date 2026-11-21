@@ -52,7 +52,7 @@ dsh plugin --profile <name> add dsh-scaffold
   <img src="docs/assets/dsh-scaffold-flow-v5-light.svg" width="100%" alt="संरचना चित्र: तीन लेन (उपभोक्ता प्लगइन / dsh-scaffold / host · CI) चार चरणों में (सेटअप / कॉल / डिस्पोज़ / CI गेट); सेटअप में host सेल में 0 plugin rows हैं और CI लेन एक exit code पर समाप्त होती है">
 </picture>
 
-![dsh-scaffold का असली टर्मिनल रन](docs/assets/dsh-plugin-kit-demo.gif)
+![dsh-scaffold का असली टर्मिनल रन](docs/assets/dsh-scaffold-demo.gif)
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
 
