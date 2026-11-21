@@ -50,6 +50,7 @@
     "THIRD_PARTY_NOTICES.md",
     "LICENSE",
     "STANDARDS.md",
+    "docs/assets/*",
     "MIGRATION.md"
   ],
   "dsh": {
