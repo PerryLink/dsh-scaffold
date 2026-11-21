@@ -35,6 +35,10 @@ dsh plugin --profile <name> add dsh-scaffold
 
 ## 它是什么
 
+![dsh-scaffold 真实终端运行](docs/assets/dsh-plugin-kit-demo.gif)
+
+*本仓库一次真实运行的动图回放。*
+
 逐项审计 20+ 个插件后发现：每个仓都在手写同一套 Provider seam，并把同样的 sanitize、pricing 与裁决（verdict）数据结构重抄一遍。`dsh-scaffold` 把这些抽成一个 **ESM + TypeScript、零运行时依赖** 的库——可插拔 Provider seam、fail-closed 审批门与自适应会话事件门、机械校验脚本、共享的 sanitize/pricing/judge 纯函数模块，外加一份新插件骨架。
 
 它是库，不是插件：不挂插件行、不注册命令或工具、不自己发起 I/O，也没有浏览器半；被消费的只有 import。

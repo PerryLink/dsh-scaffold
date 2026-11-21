@@ -112,6 +112,10 @@ consuming plugin ──import──▶ seam · gates · shared · verify
 
 ### Examples
 
+![dsh-scaffold: real terminal run](docs/assets/dsh-plugin-kit-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 These are the library's real entry points; install once, then call one.
 
 **Detailed example** — command:
