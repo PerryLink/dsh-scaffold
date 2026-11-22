@@ -11,6 +11,8 @@
 
 PerryLink DSH प्लगइन रिपॉज़िटरीज़ के लिए साझा टूलकिट: प्लगेबल Provider seam, fail-closed अनुमोदन और अनुकूली सत्र-घटना गेट, यांत्रिक verify स्क्रिप्ट, साझा शुद्ध मॉड्यूल, और नए प्लगइन का ढाँचा।
 
+अंतिम सत्यापन: DeepSeek Harness `dsh-v0.2.4-alpha.1` (2026-11-22).
+
 [इंस्टॉल](#तीन-चरणों-में-शुरुआत) · [कॉन्फ़िगरेशन](#कॉन्फ़िगरेशन) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -55,7 +57,6 @@ dsh plugin --profile <name> add dsh-scaffold
 ![dsh-scaffold का असली टर्मिनल रन](docs/assets/dsh-scaffold-demo.gif)
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
-
 
 ## तीन चरणों में शुरुआत
 

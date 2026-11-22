@@ -11,6 +11,8 @@
 
 Kit compartido para los repositorios de plugins DSH de PerryLink: seam Provider enchufable, puertas de aprobación fail-closed y de eventos de sesión adaptativos, scripts de verificación mecánica, módulos puros compartidos y un esqueleto de plugin nuevo.
 
+Última verificación: DeepSeek Harness `dsh-v0.2.4-alpha.1` (2026-11-22).
+
 [Instalación](#instalación-en-tres-pasos) · [Configuración](#configuración) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -55,7 +57,6 @@ plugin consumidor ──import──▶ seam · gates · shared · verify
 ![dsh-scaffold: ejecución real de terminal](docs/assets/dsh-scaffold-demo.gif)
 
 *Repetición animada de una ejecución real registrada en este repositorio.*
-
 
 ## Instalación en tres pasos
 
